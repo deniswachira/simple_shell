@@ -1,34 +1,18 @@
-#ifndef _HOLBERTON_H_
-#define _HOLBERTON_H_
-#include <sys/wait.h>
-#include <sys/types.h>
+#ifndef SIMPLE_SHELL
+#define SIMPLE_SHELL
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
 #include <unistd.h>
-#include <dirent.h>
-#include <limits.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 #include <string.h>
 
-extern char **environ;
+int _strlen(const char *s);
+char *_strcpy(char *dest, const char *src);
+int _putchar(char c);
+void _puts(char *str);
+unsigned int nbr_spaces(char *s);
+char **stringToTokens(char *str);
 
-char *show_input(void);
-void prompt(void);
-char *_strcat(char *src);
-int _strlen(char *str);
-void place(char *str);
-char *findfile(char *command);
-char *find_command(char *command);
-int compare(char *s1, char *s2);
-int _strcmpdir(char *s1, char *s2);
-int charput(char c);
-void place(char *str);
-char *str_concat(char *s1, char *s2);
-int lookforslash(char *cmd);
-int compareExit(char *s1, char *s2);
-int compareEnv(char *s1, char *s2);
-void execute_proc(char **cmd);
-char **identify_string(char *parameter);
-void controlC(int sig);
 #endif
